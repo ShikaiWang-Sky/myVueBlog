@@ -1,0 +1,21 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/VueBlog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=US/Eastern
+    username: root
+    password: "4296503Zz@"
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+ # jwt
+sky:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 604800
+    header: Authorization
+
+#  shiro-redis
+shiro-redis:
+  enable: true
+  redis-manager: 127.0.0.1:6379
