@@ -43,6 +43,7 @@ public class Blog implements Serializable {
     @NotBlank(message = "content cannot be empty")
     private String content;
 
+    //将LocalDateTime字段以指定格式化日期的方式返回给前端
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime created;
 

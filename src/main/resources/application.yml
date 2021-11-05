@@ -1,5 +1,12 @@
-# DataSource Config
 spring:
+  # devtool
+  devtools:
+      restart:
+        enabled: true
+        additional-paths:
+          - src/main/jave
+        exclude: WEB-INF/**
+  # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/VueBlog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=US/Eastern
@@ -7,7 +14,6 @@ spring:
     password: "4296503Zz@"
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
-
  # jwt
 sky:
   jwt:
@@ -17,5 +23,6 @@ sky:
 
 #  shiro-redis
 shiro-redis:
-  enable: true
-  redis-manager: 127.0.0.1:6379
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
