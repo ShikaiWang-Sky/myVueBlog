@@ -97,7 +97,7 @@ public class BlogController {
         Blog blogInfo = blogService.getById(blogId);
         // userId not matched
         Assert.isTrue(blogInfo.getUserId().equals(currentUser.getId()), "no access to delete this blog!");
-        blogService.removeById(blogId);
+        Assert.isTrue(blogService.removeById(blogId), "blog delete failed, please try again!");
         return Result.success(null);
     }
 }
